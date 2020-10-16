@@ -32,11 +32,18 @@ class SearchResultContainer extends Component {
         .catch((err) => console.log(err));
     }
 
-  searchEmployee = () => {
-    // API.getEmployees()
-    //   .then(res => this.setState({ results: res.data.data }))
-    //   .then(console.log(this.state.results))
-    //   .catch(err => console.log(err));
+  searchEmployee = (value) => {
+    const employees = this.state.employee;
+    const empSearch = [];
+    const search = value;
+    console.log(search);
+    for (var i = 0; i < employees.length; i++) {
+        if (employees[i].firstName.indexOf(search) > -1) {
+            console.log(employees[i].firstName);
+            empSearch.push(employees[i]);
+        }
+    }
+    this.setState({ employee: empSearch });
   };
 
   handleInputChange = event => {
@@ -44,6 +51,8 @@ class SearchResultContainer extends Component {
     this.setState({
       search: value
     });
+
+    this.searchEmployee(value);
   };
 
 
