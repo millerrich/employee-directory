@@ -15,9 +15,9 @@ function SearchForm(props) {
           placeholder="Search for employee"
           id="search"
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+        {/* <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
           Search
-        </button>
+        </button> */}
       </div>
     </form>
     </div>

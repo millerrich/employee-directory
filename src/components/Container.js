@@ -5,7 +5,7 @@ import API from "../utils/API";
 
 class SearchResultContainer extends Component {
     state = {
-        searchField: "",
+        search: "",
         employee: [],
         results: [],
         error: ""
@@ -40,45 +40,40 @@ class SearchResultContainer extends Component {
   };
 
   handleInputChange = event => {
-    const name = event.target.name;
+    // const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      [name]: value
+      search: value
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.searchGiphy(this.state.search);
-  };
 
   render() {
     return (
       <div>
+          <h1>searching for {this.state.search}</h1>
         <SearchForm
           search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
                 <table>
           <thead>
             <tr>
-            <th></th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Phone Number</th>
+                <th>Photo</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.employee.map((record, key)=> {
+            {this.state.employee.map((employee, key)=> {
               return (<ResultList 
-                firstName = {record.firstName}
-                lastName = {record.lastName}
-                email = {record.email}
-                phone = {record.phone}
-                picture = {record.picture}
+                firstName = {employee.firstName}
+                lastName = {employee.lastName}
+                email = {employee.email}
+                phone = {employee.phone}
+                picture = {employee.picture}
                 key = {key}
                 />
                 );
