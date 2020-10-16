@@ -38,7 +38,7 @@ class SearchResultContainer extends Component {
         const search = value;
         console.log(search);
         for (var i = 0; i < employees.length; i++) {
-            if (employees[i].firstName.indexOf(search) > -1) {
+            if (employees[i].firstName.toLowerCase().indexOf(search.toLowerCase()) > -1) {
                 console.log(employees[i].firstName);
                 empSearch.push(employees[i]);
             }
