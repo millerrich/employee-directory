@@ -40,7 +40,6 @@ class SearchResultContainer extends Component {
   };
 
   handleInputChange = event => {
-    // const name = event.target.name;
     const value = event.target.value;
     this.setState({
       search: value
@@ -53,7 +52,6 @@ class SearchResultContainer extends Component {
       <div>
           <h1>searching for {this.state.search}</h1>
         <SearchForm
-          search={this.state.search}
           handleInputChange={this.handleInputChange}
         />
                 <table>
