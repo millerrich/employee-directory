@@ -33,7 +33,7 @@ class SearchResultContainer extends Component {
     }
 
     searchEmployee = (value) => {
-        const employees = this.state.employee;
+        const employees = this.state.results;
         const empSearch = [];
         const search = value;
         console.log(search);
