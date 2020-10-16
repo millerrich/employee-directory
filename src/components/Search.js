@@ -2,6 +2,7 @@ import React from "react";
 
 function SearchForm(props) {
   return (
+    <div className="container">
     <form>
       <div className="form-group">
         <label htmlFor="search">Search:</label>
@@ -19,6 +20,7 @@ function SearchForm(props) {
         </button>
       </div>
     </form>
+    </div>
   );
 }
 
