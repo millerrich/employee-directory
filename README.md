@@ -12,6 +12,8 @@
 * [Test](#test)
 * [Questions](#questions)
 
+![](gif/employee-directory-gif.gif)
+
 ## Description
 You can view a list of all employees with photo, first name, last name, email and phone number. The employees are automatically listed in alphabetical order. You can use the search bar to search the list for a specific employee by their first name. The site is mobile responsive and at a certain breakpoint the table will begin to scroll horizontally.
 
