@@ -71,12 +71,15 @@ class SearchResultContainer extends Component {
 
     render() {
         return (
-            <div className="container-fluid bg-dark" style={{height: '100vh' }}>
-                <h1>Employee Directory</h1>
+            <div className="container-fluid bg-dark" style={{ height: '100vh', overflow: 'scroll' }}>
+                <h1 style={{ textAlign: 'center', color: '#ff8c00' }}>Employee Directory</h1>
                 <SearchForm
                     handleInputChange={this.handleInputChange}
                 />
-                <h2>searching for {this.state.search}</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end' }}>
+                    <h2>searching for:</h2>
+                    <span style={{ color: '#ff8c00' }}>{this.state.search}</span>
+                </div>
                 <table className="table table-bordered table-striped table-dark table-responsive-sm">
                     <thead>
                         <tr>
