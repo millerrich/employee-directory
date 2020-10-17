@@ -71,12 +71,12 @@ class SearchResultContainer extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container-fluid bg-dark">
                 <h1>searching for {this.state.search}</h1>
                 <SearchForm
                     handleInputChange={this.handleInputChange}
                 />
-                <table className="container">
+                <table className="table table-bordered table-striped table-dark table-responsive-sm">
                     <thead>
                         <tr>
                             <th>Photo</th>
