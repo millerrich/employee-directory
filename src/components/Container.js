@@ -36,12 +36,12 @@ class SearchResultContainer extends Component {
     sortEmployees() {
         const employees = this.state.results;
 
-        employees.sort(function(a, b) {
+        employees.sort(function (a, b) {
             var nameA = a.firstName.toLowerCase();
             var nameB = b.firstName.toLowerCase();
             return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
         }).then(
-        this.setState({ employee: employees })
+            this.setState({ employee: employees })
         );
     };
 
@@ -71,11 +71,12 @@ class SearchResultContainer extends Component {
 
     render() {
         return (
-            <div className="container-fluid bg-dark">
-                <h1>searching for {this.state.search}</h1>
+            <div className="container-fluid bg-dark" style={{height: '100vh' }}>
+                <h1>Employee Directory</h1>
                 <SearchForm
                     handleInputChange={this.handleInputChange}
                 />
+                <h2>searching for {this.state.search}</h2>
                 <table className="table table-bordered table-striped table-dark table-responsive-sm">
                     <thead>
                         <tr>
