@@ -28,9 +28,22 @@ class SearchResultContainer extends Component {
                     });
                 }
                 this.setState({ employee: employeeRecords, results: employeeRecords });
+                this.sortEmployees();
             })
             .catch((err) => console.log(err));
     }
+
+    sortEmployees() {
+        const employees = this.state.results;
+
+        employees.sort(function(a, b) {
+            var nameA = a.firstName.toLowerCase();
+            var nameB = b.firstName.toLowerCase();
+            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+        }).then(
+        this.setState({ employee: employees })
+        );
+    };
 
     searchEmployee = (value) => {
         const employees = this.state.results;
